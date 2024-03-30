@@ -50,7 +50,7 @@ export class DashboardComponent implements OnInit {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.token}`
     });
-    this.http.get<any>('https://todo-app-be-nu.vercel.app/todos/gettask', { headers }).subscribe(
+    this.http.get<any>('https://todo-app-be-nu.vercel.app/api/todos/gettask', { headers }).subscribe(
       response => {
         console.log(response);
          // Filter tasks with completed: true and important: true
@@ -72,7 +72,7 @@ export class DashboardComponent implements OnInit {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.token}`
     });
-    this.http.delete<any>(`https://todo-app-be-nu.vercel.app/deletetask/${taskId}`, { headers }).subscribe(
+    this.http.delete<any>(`https://todo-app-be-nu.vercel.app/api/todos/deletetask/${taskId}`, { headers }).subscribe(
       response => {
         console.log(response);
         alert(response.message)
