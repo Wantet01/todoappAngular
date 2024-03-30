@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       const email = this.loginForm.get('email')!.value;
       const password = this.loginForm.get('password')!.value;
       
-      const apiUrl = 'http://localhost:8000/api/todos/login';
+      const apiUrl = 'https://todo-app-be-nu.vercel.app/api/todos/login';
 
       this.http.post<any>(apiUrl, { email, password }).subscribe(
         response => {
